@@ -32,6 +32,10 @@ INTERFACE						*carcin-interface*
 ------------------------------------------------------------------------------
 COMMANDS						*carcin-commands*
 
+							*:CarcinRun*
+:[range]CarcinRun [{language} [{version}]]
+	Execute current buffer's code by {language} of {version} in carc.in.
+
 							*:CarcinRunFile*
 :CarcinRunFile {filename} [{language} [{version}]]
 	Execute {filename} by {language} of {version} in carc.in.
@@ -54,6 +58,10 @@ carcin#run({code} [, {language} [, {name}]])		*carcin#run()*
 
 carcin#run_file({filename} [, {language} [, {name}]])	*carcin#run_file()*
 	Execute {filename}'s content by |carcin#run()|.
+
+							*carcin#run_command()*
+carcin#run_command({code} [, {language} [, {name}]])
+	A function version of |CarcinRun|.
 
 							*carcin#run_file_command()*
 carcin#run_file_command({filename} [, {language} [, {name}]])
@@ -80,7 +88,7 @@ g:carcin_http_client					*g:carcin_http_client*
 
 							*g:carcin_show_permlink*
 g:carcin_show_permlink
-	This is a flag to show permlink in result of |CarcinRunFile|.
+	This is a flag to show permlink in result of |CarcinRun| and |CarcinRunFile|.
 
 	Default: >
 		let g:carcin_show_permlink = 1
@@ -90,6 +98,9 @@ g:carcin_show_permlink
 
 ==============================================================================
 CHANGELOG						*carcin-changelog*
+
+0.1.2		2015-08-17
+	Added |CarcinRun|, |carcin#run_command|,
 
 0.1.1		2015-08-17
 	Added |CarcinRunFile|, |carcin#run_file()| and
