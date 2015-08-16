@@ -27,7 +27,7 @@ call s:default('carcin_show_permlink', 1)
 " }}}
 
 " define a command for vim-quickrun {{{
-command -nargs=* -complete=file CarcinRunFile call carcin#run_file_command(<f-args>)
+command -nargs=+ -complete=file CarcinRunFile call carcin#run_file_command(<f-args>)
 " }}}
 
 " plugin's convention (end) {{{
