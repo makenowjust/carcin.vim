@@ -56,7 +56,9 @@ function carcin#run(code, ...) abort " {{{
         \ 'data': body,
         \ 'client': g:carcin_http_client,
         \ })
-  return s:JSON.decode(result.content).run_request
+  return s:JSON.decode(result.content).run_request.run
+endfunction " }}}
+
 endfunction " }}}
 
 " plugin's convention (end) {{{
