@@ -26,8 +26,12 @@ call s:default('carcin_http_client', ['python', 'curl', 'wget'])
 call s:default('carcin_show_permlink', 1)
 " }}}
 
-" define a command for vim-quickrun {{{
-command -nargs=+ -complete=file CarcinRunFile call carcin#run_file_command(<f-args>)
+" define commands {{{
+command! -nargs=* -range=%
+      \ CarcinRun
+      \ call carcin#run_command(join(getbufline(bufname('%'), <line1>, <line2>), "\n"), <f-args>)
+
+command! -nargs=+ -complete=file CarcinRunFile call carcin#run_file_command(<f-args>)
 " }}}
 
 " plugin's convention (end) {{{

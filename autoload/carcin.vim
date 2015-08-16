@@ -64,13 +64,21 @@ function carcin#run_file(filename, ...) abort " {{{
   return call('carcin#run', extend([code], a:000))
 endfunction " }}}
 
+function! s:show_result(result) " {{{
+  if g:carcin_show_permlink
+    echon '# ' g:carcin_url . '/#/r/' . a:result.id . "\n"
+  endif
+  echo substitute(a:result.stdout, '\e\[.\{-}m', '', 'g')
+endfunction " }}}
+
+function carcin#run_command(...) abort " {{{
+  let result = call('carcin#run', a:000)
+  call s:show_result(result)
+endfunction " }}}
+
 function carcin#run_file_command(...) abort " {{{
   let result = call('carcin#run_file', a:000)
-  if g:carcin_show_permlink
-    echon '# ' g:carcin_url . '/#/r/' . result.id . "\n"
-  endif
-  echon result.stdout
-  echon result.stderr
+  call s:show_result(result)
 endfunction " }}}
 
 " plugin's convention (end) {{{
