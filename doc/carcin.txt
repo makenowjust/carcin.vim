@@ -91,9 +91,12 @@ g:carcin_show_permlink
 ==============================================================================
 CHANGELOG						*carcin-changelog*
 
-0.1.0		2015-08-16
+0.1.1		2015-08-17
+	Added |CarcinRunFile|, |carcin#run_file()| and
+	|g:carcin_show_permlink|.
 
-	Create this plugin.
+0.1.0		2015-08-16
+	Created this plugin.
 
 
 
