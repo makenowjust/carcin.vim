@@ -66,6 +66,9 @@ endfunction " }}}
 
 function carcin#run_file_command(...) abort " {{{
   let result = call('carcin#run_file', a:000)
+  if g:carcin_show_permlink
+    echon '# ' g:carcin_url . '/#/r/' . result.id . "\n"
+  endif
   echon result.stdout
   echon result.stderr
 endfunction " }}}

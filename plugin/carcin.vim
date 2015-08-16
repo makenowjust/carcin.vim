@@ -23,6 +23,7 @@ endfunction " }}}
 " set default configurations {{{
 call s:default('carcin_url', 'http://carc.in')
 call s:default('carcin_http_client', ['python', 'curl', 'wget'])
+call s:default('carcin_show_permlink', 1)
 " }}}
 
 " define a command for vim-quickrun {{{
