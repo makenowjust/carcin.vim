@@ -25,6 +25,10 @@ call s:default('carcin_url', 'http://carc.in')
 call s:default('carcin_http_client', ['python', 'curl', 'wget'])
 " }}}
 
+" define a command for vim-quickrun {{{
+command -nargs=* -complete=file CarcinRunFile call carcin#run_file_command(<f-args>)
+" }}}
+
 " plugin's convention (end) {{{
 let &cpo = s:save_cpo
 " }}}
