@@ -59,6 +59,15 @@ function carcin#run(code, ...) abort " {{{
   return s:JSON.decode(result.content).run_request.run
 endfunction " }}}
 
+function carcin#run_file(filename, ...) abort " {{{
+  let code  = join(readfile(a:filename), "\n")
+  return call('carcin#run', extend([code], a:000))
+endfunction " }}}
+
+function carcin#run_file_command(...) abort " {{{
+  let result = call('carcin#run_file', a:000)
+  echon result.stdout
+  echon result.stderr
 endfunction " }}}
 
 " plugin's convention (end) {{{
