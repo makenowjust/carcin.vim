@@ -59,32 +59,6 @@ function carcin#run(code, ...) abort " {{{
   return s:JSON.decode(result.content).run_request
 endfunction " }}}
 
-function! carcin#complete_languages(language) " {{{
-  let candidates = []
-  for lang in carcin#languages()
-    if lang.name =~? a:language
-      call add(candidates, lang.name)
-    endif
-  endfor
-
-  return candidates
-endfunction " }}}
-
-function! carcin#complete_versions(language, version) " {{{
-  let candidates = []
-  for lang in carcin#languages()
-    if lang.name ==# a:language
-      for ver in lang.versions
-        if ver =~? a:version
-          call add(candidates, a:language . ':' . ver)
-        endif
-      endfor
-    endif
-  endfor
-
-  return candidates
-endfunction " }}}
-
 " plugin's convention (end) {{{
 let &cpo = s:save_cpo
 " }}}
