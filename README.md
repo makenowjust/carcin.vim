@@ -20,6 +20,17 @@ Plugin 'MakeNowJust/carcin.vim'
 Now, you can type `:CarcinRun` in Crystal file and run it ;)
 
 
+## cooperation to [vim-quickrun][]
+
+```viml
+let g:quickrun_config = g:quickrun_config || {}
+let g:quickrun_config['crystal/carcin'] = {
+      \ 'runner': 'vimscript',
+      \ 'command': 'CarcinRunFile',
+      \ 'exec': "%C %S crystal",
+      \ }
+```
+
 ## document
 
 ```viml
@@ -33,3 +44,4 @@ This is licensed under MIT. Please look <https://makenowjust.github.io/license/m
 
 
 [carc.in]: http://carc.in
+[vim-quickrun]: https://github.com/thinca/vim-quickrun
