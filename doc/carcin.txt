@@ -34,11 +34,11 @@ COMMANDS						*carcin-commands*
 
 							*:CarcinRun*
 :[range]CarcinRun [{language} [{version}]]
-	Execute current buffer's code by {language} of {version} in carc.in.
+	Execute current buffer's code by {language} {version} in carc.in.
 
 							*:CarcinRunFile*
 :CarcinRunFile {filename} [{language} [{version}]]
-	Execute {filename} by {language} of {version} in carc.in.
+	Execute {filename} by {language} {version} in carc.in.
 
 
 
@@ -51,7 +51,7 @@ carcin#languages()					*carcin#languages()*
 
 carcin#run({code} [, {language} [, {name}]])		*carcin#run()*
 	Execute HTTP request to carc.in and return a result executed {code} by
-	{language} of {version}.
+	{language} {version}.
 
 	If {language} and {version} is not given, {language} and {version} are
 	the first value of result of |carcin#languages()|.
