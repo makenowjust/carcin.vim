@@ -4,17 +4,25 @@ This is Vim plugin to provide utility functions for [carc.in][].
 
 ## motivation
 
-[carc.in][] is a good webpage for sharing Crystal code.  However it is webpage, I want to use such like it in my editor.  So, I created this plugin.
+[carc.in][] is the great website for sharing Crystal code.  However it is website, I want to use such like it in my editor.  So, I created this plugin.
 
 
 ## install and setting
 
 ```viml
+" Install
+
 " If you use neobundle.vim:
 NeoBundle 'MakeNowJust/carcin.vim'
 " If you use Vundle.vim:
 Plugin 'MakeNowJust/carcin.vim'
 " Or if you use another plugin manager, please install carcin.vim
+
+" Setting
+
+" If you want to use play.crystal-lang.org instead of carc.in,
+" please set this variable.
+set g:carcin_url = "https://play.crystal-lang.org"
 ```
 
 Now, you can type `:CarcinRun` in Crystal file and run it ;)
