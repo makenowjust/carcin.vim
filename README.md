@@ -22,7 +22,7 @@ Plugin 'MakeNowJust/carcin.vim'
 
 " If you want to use play.crystal-lang.org instead of carc.in,
 " please set this variable.
-set g:carcin_url = "https://play.crystal-lang.org"
+let g:carcin_url = "https://play.crystal-lang.org"
 ```
 
 Now, you can type `:CarcinRun` in Crystal file and run it ;)
